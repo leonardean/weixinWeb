@@ -1,0 +1,44 @@
+<ion-view title="上周账单">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <div data-ng-repeat="bills_merchant in bills_merchants">
+      <div class="card">
+        <div class="item item-avatar stable-bg item-icon-right">
+          <img src="../img/com-logo.png">
+          <h2>{{bills_merchant.name}}</h2>
+          <i class="icon ion-chevron-down" style="font-size: 24px; color: #ccc" ng-click="subBill = !subBill"></i>
+          <p>消费总额: {{bills_merchant.sum}}元</p>
+        </div>
+        <div data-ng-repeat="bill_merchant in bills_merchant.bills" style="margin-top: 10px; margin-bottom: -10px" data-ng-show="subBill" class="check-element sample-show-hide">
+          <div class="item item-text-wrap item-icon-right" >
+            <h2>{{bill_merchant.amount}}元</h2>
+            <p>{{bill_merchant.date}}</p>
+            <i class="icon ion-chevron-down" style="font-size: 24px; color: #ccc" ng-click="showDeal = !showDeal"></i>
+          </div>
+          <div style="margin-right:10px; margin-left:10px; margin-top: -2px; padding-bottom: 5px; width:auto; background-color: #F8F8F8; border:1px solid #ccc;" class="check-element deal-show-hide" ng-show="showDeal">
+            <table class="table" style="margin-bottom: -10px">
+              <tr>
+                <th style="width: 40%">商品名称</th>
+                <th style="width: 20%">单价(元)</th>
+                <th style="width: 20%">数量</th>
+                <th style="width: 20%">小计(元)</th>
+              </tr>
+            </table>
+            <hr>
+            <table style="width: 100%; margin-left: 10px; margin-bottom: 10px" data-ng-repeat="item in bill_merchant.items">
+              <tr>
+                <td style="width: 40%">{{item.item.name}}</td>
+                <td style="width: 20%">{{item.item.price/100}}</td>
+                <td style="width: 20%">{{item.quantity}}</td>
+                <td style="width: 20%">{{item.item.price/100 * item.quantity}}</td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

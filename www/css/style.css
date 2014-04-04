@@ -1,0 +1,57 @@
+.sample-show-hide {
+    background:white;
+}
+
+.sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+    -webkit-transition:all linear 0.2s;
+    -moz-transition:all linear 0.2s;
+    -o-transition:all linear 0.2s;
+    transition:all linear 0.2s;
+    display:block!important;
+    position: relative;
+}
+
+.sample-show-hide.ng-hide-add.ng-hide-add-active,
+.sample-show-hide.ng-hide-remove {
+    opacity:0;
+    top: 0px;
+    height: 0px;
+}
+
+.sample-show-hide.ng-hide-add,
+.sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+    top: 0px;
+    height: 83px;
+}
+
+.deal-show-hide {
+    background:white;
+}
+
+.deal-show-hide.ng-hide-add, .deal-show-hide.ng-hide-remove {
+    -webkit-transition:all linear 0.5s;
+    -moz-transition:all linear 0.5s;
+    -o-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+    display:block!important;
+}
+
+.deal-show-hide.ng-hide-add.ng-hide-add-active,
+.deal-show-hide.ng-hide-remove {
+    opacity:0;
+}
+
+.deal-show-hide.ng-hide-add,
+.deal-show-hide.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+}
+
+
+
+table, th, td {
+    border: 0px
+}
+td{
+    height: 20px;
+}
